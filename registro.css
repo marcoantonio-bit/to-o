@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Navigation */
+.nav-container {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 0;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    margin: 0 0.5rem;
+}
+
+.nav-item:hover {
+    background-color: #f8f9fa;
+    color: #ff6b35;
+    transform: translateY(-2px);
+}
+
+.nav-item.active {
+    background-color: #ff6b35;
+    color: white;
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    padding: 2rem;
+}
+
+.registro-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.registro-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.registro-title h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.registro-title p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #ff6b35;
+    background-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 0.25rem;
+    width: 18px;
+    height: 18px;
+    accent-color: #ff6b35;
+}
+
+.checkbox-group label {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.checkbox-group a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    border: none;
+    padding: 1.2rem 2rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 1rem 0;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.login-link a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.progress-step {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e9ecef;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    transform: scale(1.2);
+}
+
+/* Input Validation States */
+.form-group input:valid {
+    border-color: #28a745;
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+/* Floating Labels Effect */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    transform: translateY(-25px) scale(0.85);
+    color: #ff6b35;
+}
+
+/* Benefits Section */
+.benefits {
+    background: rgba(255, 107, 53, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+}
+
+.benefits h3 {
+    color: #ff6b35;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.benefit-icon {
+    color: #ff6b35;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        position: static;
+    }
+
+    .nav-container {
+        position: static;
+        top: auto;
+    }
+
+    .main-content {
+        margin-top: 0;
+        min-height: 100vh;
+        padding: 1rem;
+    }
+
+    .registro-container {
+        padding: 2rem 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .registro-title h1 {
+        font-size: 2rem;
+    }
+
+    .benefits-list {
+        grid-template-columns: 1fr;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-item {
+        padding: 0.8rem 1rem;
+        margin: 0.2rem;
+    }
+}

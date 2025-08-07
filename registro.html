@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - TechStore</title>
+    <link rel="stylesheet" href="registro.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">TechStore</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                Inicio
+            </a>
+            <a href="Rebajas.html" class="nav-item">
+                <span class="nav-icon">🏷️</span>
+                Rebajas
+            </a>
+            <a href="Soporte Técnico.html" class="nav-item">
+                <span class="nav-icon">🛠️</span>
+                Soporte Técnico
+            </a>
+            <a href="registro.html" class="nav-item active">
+                <span class="nav-icon">👤</span>
+                Registro
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <form class="registro-container" action="#" method="post">
+            <div class="registro-title">
+                <h1>🚀 TechStore</h1>
+                <p>Únete y recibe ofertas exclusivas</p>
+            </div>
+
+            <div class="progress-indicator">
+                <div class="progress-step active"></div>
+                <div class="progress-step active"></div>
+                <div class="progress-step"></div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required minlength="2" />
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido *</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required minlength="2" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico *</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+52 55 1234 5678" required pattern="[0-9+\s]{10,}" />
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Contraseña *</label>
+                    <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required minlength="8" />
+                </div>
+                <div class="form-group">
+                    <label for="confirmar">Confirmar Contraseña *</label>
+                    <input type="password" id="confirmar" name="confirmar" placeholder="Repite tu contraseña" required minlength="8" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha">Fecha de nacimiento</label>
+                <input type="date" id="fecha" name="fecha" />
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Género</label>
+                <select id="genero" name="genero">
+                    <option value="">Seleccionar...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                    <option value="prefiero-no-decir">Prefiero no decir</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad donde vives" />
+            </div>
+
+            <div class="benefits">
+                <h3>✨ Beneficios de ser miembro</h3>
+                <div class="benefits-list">
+                    <div class="benefit-item"><span class="benefit-icon">🎯</span><span>Ofertas exclusivas</span></div>
+                    <div class="benefit-item"><span class="benefit-icon">🚚</span><span>Envío gratuito</span></div>
+                    <div class="benefit-item"><span class="benefit-icon">⚡</span><span>Acceso prioritario</span></div>
+                    <div class="benefit-item"><span class="benefit-icon">🎁</span><span>Regalos sorpresa</span></div>
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="terminos" name="terminos" required />
+                <label for="terminos">Acepto los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a> *</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="newsletter" name="newsletter" />
+                <label for="newsletter">Deseo recibir noticias, promociones y ofertas especiales por email</label>
+            </div>
+
+            <button type="submit" class="btn">🚀 Crear mi cuenta</button>
+
+            <div class="login-link">
+                ¿Ya tienes cuenta? <a href="#">Inicia sesión aquí</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

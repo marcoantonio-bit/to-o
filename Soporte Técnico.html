@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Soporte Técnico - TechStore</title>
+    <link rel="stylesheet" href="Soporte Técnico.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">TechStore</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                Inicio
+            </a>
+            <a href="Rebajas.html" class="nav-item">
+                <span class="nav-icon">🏷️</span>
+                Rebajas
+            </a>
+            <a href="Soporte Técnico.html" class="nav-item active">
+                <span class="nav-icon">🛠️</span>
+                Soporte Técnico
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="soporte-hero">
+        <h1>🛠️ Soporte Técnico 🛠️</h1>
+        <p>¿Tienes algún problema o duda? ¡Contáctanos y con gusto te ayudamos!</p>
+
+        <div class="support-features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div>Respuesta Rápida</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👨‍💻</div>
+                <div>Expertos 24/7</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <div>Solución Garantizada</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="soporte-section">
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-subtitle">Completa el formulario y nos pondremos en contacto contigo</p>
+
+        <form class="formulario">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" placeholder="Tu nombre completo" required />
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" placeholder="tucorreo@ejemplo.com" required />
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono (Opcional)</label>
+                <input type="tel" id="telefono" placeholder="+52 555 123 4567" />
+            </div>
+
+            <div class="form-group">
+                <label for="asunto">Tipo de Consulta</label>
+                <select id="asunto">
+                    <option value="">Selecciona un tipo</option>
+                    <option value="problema-tecnico">Problema Técnico</option>
+                    <option value="garantia">Garantía</option>
+                    <option value="devolucion">Devolución</option>
+                    <option value="informacion">Información de Producto</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" rows="5" placeholder="Describe tu consulta o problema en detalle..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <div class="contact-title">Email</div>
+                <div class="contact-detail">soporte@techstore.com</div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📱</div>
+                <div class="contact-title">WhatsApp</div>
+                <div class="contact-detail">+52 555 123 4567</div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">🕐</div>
+                <div class="contact-title">Horarios</div>
+                <div class="contact-detail">Lun-Vie: 9AM-7PM<br/>Sáb: 10AM-4PM</div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Cuál es el tiempo de respuesta?</div>
+                <div class="faq-answer">Respondemos a todos los mensajes dentro de las primeras 24 horas en días hábiles.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Ofrecen garantía en todos los productos?</div>
+                <div class="faq-answer">Sí, todos nuestros productos cuentan con garantía del fabricante. Consulta los términos específicos de cada producto.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo devolver un producto?</div>
+                <div class="faq-answer">Tienes 30 días para devolver cualquier producto en perfectas condiciones. Consulta nuestra política de devoluciones.</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

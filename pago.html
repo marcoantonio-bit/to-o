@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago - TechStore</title>
+    <link rel="stylesheet" href="pago.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">TechStore</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                Inicio
+            </a>
+            <a href="Rebajas.html" class="nav-item">
+                <span class="nav-icon">🏷</span>
+                Rebajas
+            </a>
+            <a href="Soporte Técnico.html" class="nav-item">
+                <span class="nav-icon">🛠</span>
+                Soporte Técnico
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Order Summary Sidebar -->
+        <div class="order-summary">
+            <h3 class="summary-title">Resumen del Pedido</h3>
+            <div class="summary-item">
+                <span>Producto:</span>
+                <span id="sidebar-producto">-</span>
+            </div>
+            <div class="summary-item">
+                <span>Subtotal:</span>
+                <span>$<span id="sidebar-precio">0</span> MXN</span>
+            </div>
+            <div class="summary-item">
+                <span>Envío:</span>
+                <span>Gratis</span>
+            </div>
+            <div class="summary-item">
+                <span>IVA (16%):</span>
+                <span>$<span id="sidebar-iva">0</span> MXN</span>
+            </div>
+            <div class="summary-total">
+                <span>Total:</span>
+                <span>$<span id="sidebar-total">0</span> MXN</span>
+            </div>
+        </div>
+
+        <!-- Payment Form -->
+        <div class="pago-container">
+            <div class="pago-header">
+                <h1>💳 Finalizar Compra</h1>
+                <p>Completa tu pago de forma segura</p>
+            </div>
+
+            <div class="pago-content">
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="step completed">1</div>
+                    <div class="step completed">2</div>
+                    <div class="step active">3</div>
+                </div>
+
+                <!-- Product Summary -->
+                <div class="resumen">
+                    <h2>📦 Producto Seleccionado</h2>
+                    <div class="product-detail">
+                        <div class="product-name" id="nombre-producto">Cargando producto...</div>
+                        <div class="product-price">$<span id="precio-producto">0</span> MXN</div>
+                    </div>
+                    <div class="product-detail">
+                        <div>Total a Pagar</div>
+                        <div>$<span id="total-producto">0</span> MXN</div>
+                    </div>
+                </div>
+
+                <!-- Security Badge -->
+                <div class="security-badge">
+                    <span class="security-icon">🔒</span>
+                    <span>Pago 100% seguro y protegido</span>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-section">
+                    <h2>💳 Método de Pago</h2>
+                    
+                    <form class="formulario-pago">
+                        <div class="payment-methods">
+                            <div class="payment-option">
+                                <input type="radio" id="tarjeta" name="metodo" value="tarjeta" required>
+                                <label for="tarjeta">
+                                    <div class="payment-icon">💳</div>
+                                    <div class="payment-details">
+                                        <div class="payment-title">Tarjeta de Crédito/Débito</div>
+                                        <div class="payment-description">Visa, MasterCard, American Express</div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="paypal" name="metodo" value="paypal">
+                                <label for="paypal">
+                                    <div class="payment-icon">💰</div>
+                                    <div class="payment-details">
+                                        <div class="payment-title">PayPal</div>
+                                        <div class="payment-description">Paga con tu cuenta PayPal</div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="oxxo" name="metodo" value="oxxo">
+                                <label for="oxxo">
+                                    <div class="payment-icon">🏪</div>
+                                    <div class="payment-details">
+                                        <div class="payment-title">OXXO / Efectivo</div>
+                                        <div class="payment-description">Paga en cualquier tienda OXXO</div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="transferencia" name="metodo" value="transferencia">
+                                <label for="transferencia">
+                                    <div class="payment-icon">🏦</div>
+                                    <div class="payment-details">
+                                        <div class="payment-title">Transferencia Bancaria</div>
+                                        <div class="payment-description">SPEI, Banorte, BBVA, Santander</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="submit" class="btn-primary" id="btn-pagar">
+                                🚀 Proceder al Pago
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+               
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Leer los datos de la URL
+        const params = new URLSearchParams(window.location.search);
+        const producto = params.get("producto") || "Producto no especificado";
+        const precio = parseFloat(params.get("precio")) || 0;
+
+        // Calcular IVA y total
+        const iva = Math.round(precio * 0.16);
+        const total = precio + iva;
+
+        // Mostrar en la página principal
+        document.getElementById("nombre-producto").textContent = producto;
+        document.getElementById("precio-producto").textContent = precio.toLocaleString();
+        document.getElementById("total-producto").textContent = total.toLocaleString();
+
+        // Mostrar en el sidebar
+        document.getElementById("sidebar-producto").textContent = producto;
+        document.getElementById("sidebar-precio").textContent = precio.toLocaleString();
+        document.getElementById("sidebar-iva").textContent = iva.toLocaleString();
+        document.getElementById("sidebar-total").textContent = total.toLocaleString();
+
+        // Manejar selección de método de pago
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const radioButtons = document.querySelectorAll('input[name="metodo"]');
+
+        paymentOptions.forEach((option, index) => {
+            option.addEventListener('click', () => {
+                // Remover selección previa
+                paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                // Agregar selección actual
+                option.classList.add('selected');
+                radioButtons[index].checked = true;
+            });
+        });
+
+        // Manejar envío del formulario
+        document.querySelector('.formulario-pago').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const selectedMethod = document.querySelector('input[name="metodo"]:checked');
+            
+            if (selectedMethod) {
+                const btnPagar = document.getElementById('btn-pagar');
+                btnPagar.textContent = '⏳ Procesando...';
+                btnPagar.disabled = true;
+                
+                setTimeout(() => {
+                    alert(`✅ ¡Pago procesado con éxito!\n\nProducto: ${producto}\nTotal: $${total.toLocaleString()} MXN\nMétodo: ${selectedMethod.value.toUpperCase()}\n\n¡Gracias por tu compra!`);
+                    window.location.href = 'index.html';
+                }, 2000);
+            } else {
+                alert('❌ Por favor selecciona un método de pago');
+            }
+        });
+    </script>
+</body>
+</html>
